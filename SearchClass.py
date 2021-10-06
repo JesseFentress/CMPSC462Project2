@@ -3,7 +3,6 @@ import timeit
 
 class SearchClass:
 
-
     def linear_search(self, l, target):
         linearStart = timeit.default_timer()  # Timer for cpu time
 

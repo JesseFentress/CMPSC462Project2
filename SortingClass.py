@@ -24,10 +24,12 @@ class SortingClass:
     # where value fits in the sorted sub-list.
     ###############################################################
     def insertion_sort(l):
-        for element in range(1, len(l)):
+        for element in range(1, len(l)):  # First element is "sorted" so iterate through indices 1 to the end
 
-            value = l[element]
+            value = l[element]  # Value is for the current unsorted element that is being looked at
 
+            # Finds the proper position of the currently looked at unsorted element in the sorted sublist by comparing
+            # it to the sorted element to its left and if its less swap them
             while l[element - 1] > value and element > 0:
                 l[element], l[element - 1] = l[element - 1], l[element]
                 element = element - 1
@@ -35,7 +37,9 @@ class SortingClass:
         return l
 
     ###############################################################
-    # Every index except the last
+    # Compare indices in pairs of two (n, n + 1), move the larger value to the second index and then compare the next
+    # pair of indices where  index n + 1 is not index n. The largest value will be moved to the back and now the
+    # algorithm will look at the remaining unsorted indices.
     ###############################################################
     def bubble_sort(l):
         # Iterates through len(l) - 1 last item will be sorted after first iteration
@@ -51,7 +55,7 @@ class SortingClass:
         return l  # Return the sorted list
 
     ###############################################################
-    # I spent too much time working on this recursive solution getting a "maximum recursion depth  exceeded in
+    # I spent too much time working on this recursive solution getting a "maximum recursion depth exceeded in
     # comparison" error. The lists we're dealing with here were too big, but it turned out to work with smaller lists
     # so I chose to keep the function in here.
     ###############################################################
@@ -63,8 +67,8 @@ class SortingClass:
             if l[element] > l[element + 1]:
                 l[element], l[element + 1] = l[element + 1], l[element]
 
-        return self.rec_bubble_sort(l, length - 1) + [
-            l[-1]]  # Return recursive bubble sort of new sub-list + the sorted element
+        # Return recursive bubble sort of new sub-list + the sorted element
+        return self.rec_bubble_sort(l, length - 1) + [l[-1]]
 
     ###############################################################
     # Merge sort is broken down into two functions, merge() and merge_sort(). The merge_sort() function is what is

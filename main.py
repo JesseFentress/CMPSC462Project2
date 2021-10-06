@@ -41,7 +41,7 @@ list2 = list1.copy()
 list2.sort()
 binaryStart = timeit.default_timer() # Timer for cpu time
 print(se.binary_search(list2, 0, len(list1) - 1, t))
-print("Time elapsed: " + str(timeit.default_timer() - binaryStart)) # Timer for cpu time
+print("Time elapsed: " + str(timeit.default_timer() - binaryStart))  # Timer for cpu time
 print()
 
 ###############################################################
@@ -63,7 +63,6 @@ print()
 
 
 print("#### Distinct Numbers Search ####")
-uniqueStart = timeit.default_timer()
 print(se.unique(list1))
 print()
 
@@ -75,19 +74,25 @@ so = SortingClass()
 
 print("#### Selection Sort ####")
 list3 = list1.copy()
+selStart = timeit.default_timer()
 print(SortingClass.selection_sort(list3))
+print("Time elapsed: " + str(timeit.default_timer() - selStart))  # Timer for cpu time
 print()
 
 
 print("#### Insertion Sort ####")
 list4 = list1.copy()
+insStart = timeit.default_timer()
 print(SortingClass.insertion_sort(list4))
+print("Time elapsed: " + str(timeit.default_timer() - insStart))  # Timer for cpu time
 print()
 
 
 print("#### Bubble Sort ####")
 list5 = list1.copy()
+bubStart = timeit.default_timer()
 print(SortingClass.bubble_sort(list5))
+print("Time elapsed: " + str(timeit.default_timer() - bubStart))  # Timer for cpu time
 print()
 
 
@@ -99,5 +104,7 @@ print()
 
 print("#### Merge Sort ####")
 list7 = list1.copy()
+mergStart = timeit.default_timer()
 print(SortingClass.merge_sort(so, list7))
+print("Time elapsed: " + str(timeit.default_timer() - mergStart))  # Timer for cpu time
 print()
